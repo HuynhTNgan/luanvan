@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Admin</title>
+  <link rel="stylesheet" href="css/styledel_dashboard.css">
+  <link href="image/logo.PNG" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <meta name="viewport" content="" width=device-width, initial-scale="1.0">
+
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li style="background-color: #333"><a href="dashboard.html" class="logo">
+            <i class="fas fa-home"></i>
+            <span class="nav-item">DashBoard</spam>
+          </a></li><br><br>
+
+
+
+        <li><a href="/add">
+            <i class="fas fa-info-circle"></i>
+            <span class="nav-item">Thêm thông tin</span>
+          </a></li>
+
+        <li style="background-color: #06223a;"><a href="/del">
+            <i class="fas fa-trash"></i>
+            <span class="nav-item">Xóa thông tin</span>
+          </a></li>
+
+        <li><a href="/index.html">
+            <i class="fas fa-arrow-circle-left"></i>
+            <span class="nav-item">Trở về Trang chủ</span>
+          </a></li>
+
+      </ul>
+    </nav>
+
+
+    <div class="main-top">
+
+      <i class="fas fa-sign-out-alt">Đăng xuất</i>
+
+      <form>
+
+        <div class="main_div">
+
+          <div class="title">Nhập thông tin cần xóa</div> <br>
+
+
+
+          <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Mã số sinh viên</p>
+          <div class="input_box">
+            <input type="text" id="mssv" placeholder="Nhập MSSV" name="mssv" required
+              style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+          </div><br>
+
+          <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Trường</p>
+          <div class="input_box">
+            <input type="text" id="truong" placeholder="Nhập tên Trường Đại học" name="truong" required
+              style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+          </div><br>
+
+          <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Số hiệu Bằng tốt nghiệp</p>
+          <div class="input_box">
+            <input type="text" id="mssv" placeholder="ví dụ: VBXXXX" name="mssv" required
+              style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+          </div><br>
+
+
+
+          <div class="clearfix">
+            <button onclick="dn()" type="submit" class="delbtn">Xóa thông tin</button>
+          </div> <br>
+
+
+
+
+        </div>
+
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>
+<script>
+  const express = require('express')
+  const router = express.Router();
+
+
+  router.get('/dashboard', function (req, res, next) {
+    if (req.session.loggedinUser) {
+      res.render('dashboard.ejs', { email: req.session.mail })
+    } else {
+      res.redirect('/xacthuc');
+    }
+
+  })
+
+
+  module.exports = router; </script>
