@@ -1,0 +1,138 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px;
+    background-color: #6d8599;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+#bangdanhsach {
+    width: 100%;
+    height: 100%;
+    
+    border: 1px solid #000;
+    margin-bottom: 20px;
+    background-color: #000;
+    
+}
+
+#bangdanhsach th, #bangdanhsach td {
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#bangdanhsach th {
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+}
+
+#dulieu {
+  width: 100%;
+  height: 100%;
+  
+  border: 1px solid #ffffff;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  
+}
+
+#dulieu th, #dulieu td {
+  padding: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+#dulieu th {
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+#bangdanhsach .btn-xoa {
+    cursor: pointer;
+    color: #fff;
+    background-color: #ff0000;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+#bangdanhsach .btn-xoa:hover {
+    background-color: #990000;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  
+  }
+  
+  .footer .box-container .box{
+    flex: 1 1 25rem;
+  }
+  
+  .footer .box-container .box h3 {
+    color: #333;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+  }
+  
+  .footer .box-container .box a{
+    display: block;
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+  }
+  
+  .footer .box-container .box a:hover{
+    color:#fff;
+    text-decoration: underline;
+  }
+  
+  .footer .credit{
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 1rem;
+    color: #333;
+    border-top: .1rem solid rgba(0,0,0,1);
+  }
+  
+  .footer .credit span{
+    color: #fff;
+  
+  }
+
+  a {
+    color: #fff;
+  }
+  
+  @media (max-width: 991px){
+    html{
+      font-size: 55%;
+    }
+    header {
+      padding: 2rem;
+    }
+    section {
+      padding: 2rem;
+    }
+    .home {
+      background-position: left;
+    }
+  
+  }
+  
+  @media (max-width: 450px){
+    html {
+      font-size: 50%;
+    }
+  }

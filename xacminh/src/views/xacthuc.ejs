@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+  data-template="vertical-menu-template-free">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Xác Thực </title>
+  <link rel="stylesheet" href="../assets/css/xacthuc.css">
+  <link href="../assets/img/logo.PNG" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<header style="position: fixed; top: 20px; left: 10px; padding: 10px; font-size: 20px;">
+  <a href="index.html" style="text-decoration: none; color: #06223a;" class="fa fa-solid fa-graduation-cap"><b><i>CHỨNG THỰC</i></b></a>
+</header>
+<br><br><br><br>
+
+<body>
+
+  <form id="formAuthentication" action="/xacthuc" method="POST">
+
+    <div class="main_div">
+
+      <div class="title">Nhập thông tin bạn muốn xác thực </div> <br>
+
+      <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Mã số sinh viên</p>
+      <div class="input_box">
+        <input type="text" id="mssv" placeholder="Nhập MSSV" name="mssv" required
+          style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+      </div><br>
+      <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Trường</p>
+      <div class="input_box">
+        <input type="text" id="truong" placeholder="Nhập tên trường" name="truong" required
+          style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+      </div><br>
+      <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Mã Văn Bằng</p>
+      <div class="input_box">
+        <input type="text" id="sohieu" placeholder="Nhập số hiệu văn bằng" name="sohieu" required
+          style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+      </div><br>
+
+
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">Xác thực</button>
+      </div> <br>
+
+
+      <a href="index.html">Quay về Trang chủ</a>
+
+    </div>
+
+  </form>
+
+
+
+  <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+  <script src="../assets/vendor/libs/popper/popper.js"></script>
+  <script src="../assets/vendor/js/bootstrap.js"></script>
+  <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+  <script src="../assets/vendor/js/menu.js"></script>
+  <!-- endbuild -->
+
+  <!-- Vendors JS -->
+
+  <!-- Main JS -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    const soHieuInput = document.getElementById('sohieu');
+  
+    soHieuInput.addEventListener('input', function () {
+      this.value = this.value.toUpperCase();
+    });
+  </script>
+
+  <!-- Page JS -->
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body><br><br><br>
+
+</html>

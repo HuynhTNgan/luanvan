@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-assets-path="../assets/">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Đăng nhập</title>
+  <link rel="stylesheet" href="../assets/css/login.css">
+  <link href="../assets/img/logo.PNG" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<header style="position: fixed; top: 20px; left: 10px; padding: 10px; font-size: 20px;">
+  <a href="index.html" style="text-decoration: none; color: #06223a;" class="fa fa-solid fa-graduation-cap"><b><i>CHỨNG
+        THỰC</i></b></a>
+</header>
+
+<br><br><br><br>
+
+<body>
+
+
+  <div class="main_div">
+
+    <div class="title"> Đăng Nhập</div>
+
+
+
+    <form action="/login" method="POST">
+      <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Username</p>
+      <div class="input_box">
+        <input type="text" id="email" placeholder="Nhập Username" name="username" required
+          style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+
+      </div><br>
+      <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Mật khẩu</p>
+      <div class="input_box">
+        <input type="password" id="pw" placeholder="Nhập mật khẩu username" name="pw" required
+          style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+
+
+
+
+      </div>
+
+
+
+
+
+
+      <div class="option_div">
+        <div class="check_box">
+          <input type="checkbox" checked="checked" name="remember">
+          <span>Nhớ mật khẩu</span>
+        </div>
+
+      </div>
+
+      <div class="clearfix">
+        <button onclick="dn()" type="submit" class="signupbtn">Đăng nhập</button>
+      </div> <br>
+
+
+
+
+      <a href="index.html">Quay về Trang chủ</a>
+
+
+
+
+
+
+    </form>
+  </div>
+
+
+
+</body>
+<br>
+<br>
+<br>
+
+
+</html>

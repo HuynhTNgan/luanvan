@@ -1,0 +1,184 @@
+:root{
+  body {
+    background: linear-gradient(to bottom, #3b404a 15%, #262b32 100%);
+  }
+
+}
+
+*{
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none; border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+} 
+
+#myVideo {
+  position: absolute;
+
+  left: 75%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  z-index: -1; /* Đặt video sau các phần tử khác */
+}
+
+
+
+
+/*html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  /*scroll-padding-top: 6rem;
+  overflow-x: hidden;
+} */
+
+/*header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+} */
+/*header .icons a{
+  font-size: 2.5rem;
+  margin-left: 1.5rem;
+} */
+
+.button{
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: #11585a;
+  color: #fff;
+  padding: .9rem 3rem;
+  cursor: pointer;
+  font-size: 20px;
+  position: fixed;
+  top: 3px; right: 6px;
+}
+
+.button:hover{
+  background:#06223a ;
+  padding: 1.2rem 3.5rem;
+}
+
+
+
+section{
+  padding: 2rem 9%;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.home .content{
+  max-width: 50rem;
+}
+
+.home .content h1{
+  font-size: 5rem;
+  color: #6deff3;
+}
+
+.home .content h2{
+  font-size: 1.5rem;
+  color: #6deff3;
+  
+  
+}
+
+.btn{
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: #11585a;
+  color: #fff;
+  padding: .9rem 3.5rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+.btn:hover{
+  background:#06223a ;
+  padding: 1.2rem 3.5rem;
+}
+
+.footer .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+
+}
+
+.footer .box-container .box{
+  flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3 {
+  color: #333;
+  font-size: 2.5rem;
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+  display: block;
+  color: #666;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover{
+  color:#fff;
+  text-decoration: underline;
+}
+
+.footer .credit{
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 2.5rem;
+  font-size: 1rem;
+  color: #a39c9c;
+  border-top: .1rem solid rgba(0,0,0,1);
+}
+
+.footer .credit span{
+  color: #fff;
+
+}
+
+@media (max-width: 991px){
+  html{
+    font-size: 55%;
+  }
+  header {
+    padding: 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+  .home {
+    background-position: left;
+  }
+
+}
+
+@media (max-width: 450px){
+  html {
+    font-size: 50%;
+  }
+}

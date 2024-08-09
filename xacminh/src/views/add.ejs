@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-assets-path="../assets/">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Trường Đại học 
+  </title>
+  <link rel="stylesheet" href="../assets/css/add.css">
+  <link href="../assets/img/logo.PNG" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <meta name="viewport" content="" width=device-width, initial-scale="1.0">
+
+</head>
+
+<body style="height: 100vh; margin: 0;">
+  <div class="container">
+    <nav>
+      <ul>
+        <div style="color:#ffffff; font-size:20px; height:100px">
+          <li>
+            <i class="fas fa-home"></i>
+            <span class="nav-item">TRƯỜNG ĐẠI HỌC </span>
+          </li>
+        </div>
+
+        <li style="background-color: #06223a;"><a href="/login">
+            <i class="fas fa-solid fa-user"></i>
+            <span class="nav-item">Thêm thông tin </span>
+          </a></li>
+
+        <li><a href="/xoa">
+            <i class="fas fa-trash"></i>
+            <span class="nav-item">Xóa thông tin</span>
+          </a></li>
+
+
+      </ul>
+    </nav>
+
+    <div class="main-top">
+      <form action="/logout" class="main-logout">
+        <button class="fas fa-sign-out-alt">Đăng xuất</button>
+      </form>
+      <div class="container2" style=" margin:50px 200px;">
+        <h1 class="form-title">Hãy thêm các thông tin sau</h1>
+        <form id="formAuthentication" class="main-user-info" action="/add" method="POST">
+          <div class="main-user-info">
+            <div class="user-input-box">
+              <label for="name">Họ và Tên</label>
+              <input type="text" id="fullname" placeholder="Ghi rõ Họ và Tên" name="fullname" required
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif';">
+            </div>
+
+            <div class="user-input-box">
+              <label for="name">Mã số sinh viên</label>
+              <input type="text" id="mssv" placeholder="Nhập MSSV" name="mssv" required
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif';">
+            </div>
+
+            <div class="user-input-box">
+              <label for="ngaysinh">Ngày sinh:</label>
+              <input type="text" id="ngaysinh" placeholder="dd/mm/yyyy" name="ngaysinh" required
+                style="font-family: 'Verdanksa, Geneva, Tahoma, sans-serif';" 
+                pattern="[0-9]{1,8}\/[0-9]{1,2}\/[0-9]{4}"
+                oninvalid="this.setCustomValidity('Định dạng ngày sinh không hợp lệ. Vui lòng nhập dd/mm/yyyy.')"
+                onchange="this.setCustomValidity('')">
+            </div>
+
+
+            <div class="user-input-box">
+              <label for="truong">Trường</label>
+              <input type="text" name="truong" value="<%= account.truong %>" required readonly
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif';">
+            </div>
+            <div class="user-input-box">
+              <label for="name">Ngành học</label>
+              <input type="text" id="nganh" placeholder="Nhập Ngành học" name="nganh" required
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif';">
+            </div>
+
+            <div class="user-input-box">
+              <label for="name">Năm tốt nghiệp</label>
+              <input type="text" id="nam" placeholder="Nhập Năm Tốt nghiệp" name="nam" required
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif';" pattern="[0-9]{4}">
+            </div>
+
+            <div class="user-input-box">
+              <label for="name">Xếp loại tốt nghiệp</label>
+              <select id="loai" name="loai" required
+                oninvalid="this.setCustomValidity('Vui lòng chọn loại tốt nghiệp phù hợp')"
+                onchange="this.setCustomValidity('')" placeholder="Chọn loại tốt nghiêp"
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'; width: 95%; height: 40px; padding: 0 10px; border: 1px solid #333; border-radius: 7px;">
+                <option value="" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Chọn xếp loại tốt nghiệp
+                </option>
+                <option value="Xuất sắc" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Xuất sắc</option>
+                <option value="Giỏi" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Giỏi</option>
+                <option value="Khá" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Khá</option>
+              </select>
+            </div>
+
+            <div class="user-input-box">
+              <label for="name">Loại Bằng Tốt nghiệp</label>
+              <select id="bang" name="bang" required oninvalid="this.setCustomValidity('Vui lòng chọn bằng phù hợp')"
+                onchange="this.setCustomValidity('')"
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'; width: 95%; height: 40px; padding: 0 10px; border: 1px solid #333; border-radius: 7px;">
+                <option value="" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Chọn loại bằng</option>
+                <option value="Cử nhân" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Cử nhân</option>
+                <option value="Kỹ sư" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Kỹ sư</option>
+                <option value="Bác sĩ" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Bác sĩ</option>
+                <option value="Dược sĩ" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Dược sĩ</option>
+                <option value="Thạc sĩ" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Thạc sĩ</option>
+              </select>
+            </div>
+
+            <div class="user-input-box">
+              <label for="name">Hình thức tốt nghiệp</label>
+              <select id="hinhthuc" name="hinhthuc" required
+                oninvalid="this.setCustomValidity('Vui lòng chọn hình thức tốt nghiệp phù hợp')"
+                onchange="this.setCustomValidity('')"
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'; width: 95%; height: 40px; padding: 0 10px; border: 1px solid #333; border-radius: 7px;">
+                <option value="" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Chọn hình thức tốt nghiệp
+                </option>
+                <option value="Chính quy" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Chính quy</option>
+                <option value="Sau đại học" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Sau đại học
+                </option>
+                <option value="Vừa học vừa làm" style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Vừa học vừa
+                  làm</option>
+              </select>
+            </div>
+
+            <div class="user-input-box">
+              <label for="name">Số hiệu</label>
+              <input type="text" id="sohieu" placeholder="ví dụ: VBXXXX" name="sohieu" required uppercase
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif';">
+            </div>
+
+
+
+            <div class="user-input-box">
+              <label for="name">Mật khẩu</label>
+              <input type="password" id="pw" placeholder="Tạo mật khẩu cho sinh viên" name="pw" required
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'; padding-right: 10px; ">
+              <i id="togglePassword" style="position: absolute; right: 46%; top: 74%; transform: translateY(50%); font-size: 11px; "
+                class="fas fa-eye-slash"></i>
+            </div>
+            
+
+
+
+            <div class="user-input-box">
+              <label for="ht">Hiệu trưởng</label>
+              <input type="text" name="ht" value="<%= account.ht %>" required
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif';">
+            </div>
+
+            <input type="hidden" name="password" value="<%= account.pw %>">
+            <div class="form-submit-btn" style=" margin:0px 220px;">
+              <input type="submit" value="Tạo thông tin">
+            </div>
+
+
+          </div>
+      </div>
+    </div>
+
+
+
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../assets/vendor/js/menu.js"></script>
+
+    <script src="../assets/js/main.js"></script>
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body><br><br><br>
+
+</html>
+
+<script>
+  const pwInput = document.getElementById('pw');
+  const toggleIcon = document.getElementById('togglePassword');
+
+  toggleIcon.addEventListener('click', function () {
+      // Toggle between password and text display
+      if (pwInput.type === "password") {
+          pwInput.type = "text";
+          toggleIcon.classList.remove('fa-eye-slash');
+          toggleIcon.classList.add('fa-eye');
+      } else {
+          pwInput.type = "password";
+          toggleIcon.classList.remove('fa-eye');
+          toggleIcon.classList.add('fa-eye-slash');
+      }
+  });
+</script>
+<script>
+  const soHieuInput = document.getElementById('sohieu');
+
+  soHieuInput.addEventListener('input', function () {
+    this.value = this.value.toUpperCase();
+  });
+</script>

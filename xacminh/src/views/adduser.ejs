@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-assets-path="../assets/">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../assets/css/adduser.css">
+    <link href="../assets/img/logo.PNG" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <meta name="viewport" content="" width=device-width, initial-scale="1.0">
+
+</head>
+
+<body style="height: 100vh; margin: 0;">
+    <div class="container">
+        <nav>
+            <ul>
+                <div style="color:#ffffff; font-size:20px; height:100px">
+                    <li>
+                        <i class="fas fa-home"></i>
+                        <span class="nav-item">ADMIN</span>
+                    </li>
+                </div>
+
+
+
+
+
+                <li style="background-color: #06223a;"><a href="/adduser">
+                        <i class="fas fa-solid fa-user"></i>
+                        <span class="nav-item">Tạo tài khoản</span>
+                    </a></li>
+
+
+
+                <li><a href="/dsachuser">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="nav-item">Danh sách Username</span>
+                    </a></li>
+
+                <li><a href="/xoauser">
+                        <i class="fas fa-trash"></i>
+                        <span class="nav-item">Xóa Username</span>
+                    </a></li>
+
+
+            </ul>
+        </nav>
+
+        <div class="main-top">
+            <form action="/logout" class="main-logout">
+                <button class="fas fa-sign-out-alt">Đăng xuất</button>
+            </form>
+            <form id="formAuthentication" action="/adduser" method="POST">
+
+                <div class="wrapper">
+                    <div class="main_div" style="height: 100%; margin:50px 250px;">
+
+                        <div class="title">Nhập thông tin để tạo tài khoản </div> <br>
+
+                        <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Username</p>
+                        <div class="input_box">
+                            <input type="text" id="username" placeholder="Nhập tên username muốn tạo" name="username"
+                                required style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+                        </div><br>
+
+                        <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Tên trường</p>
+                        <div class="input_box">
+                            <input type="text" id="truong" placeholder="Nhập tên Trường Đại học" name="truong" required
+                                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+                        </div><br>
+
+                        <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Hiệu trưởng</p>
+                        <div class="input_box">
+                            <input type="text" id="ht" placeholder="Nhập tên Hiệu trưởng của Trường Đại học" name="ht"
+                                required style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+                        </div><br>
+
+                        <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Mật khẩu</p>
+                        <div class="input_box">
+                            <input type="password" id="pw" placeholder="Tạo mật khẩu cho username" name="pw" required
+                                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+                            <i id="togglePassword" style="font-size:2ch; margin-top: 1px; "
+                                class="fas fa-eye-slash"></i>
+                        </div>
+                        <br>
+
+                        <div class="clearfix">
+                            <button type="submit" class="addbtn">Tạo tài khoản</button>
+                        </div> <br>
+
+
+
+
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <script>
+        const pwInput = document.getElementById('pw');
+        const toggleIcon = document.getElementById('togglePassword');
+
+        toggleIcon.addEventListener('click', function () {
+            // Toggle between password and text display
+            if (pwInput.type === "password") {
+                pwInput.type = "text";
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            } else {
+                pwInput.type = "password";
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            }
+        });
+    </script>
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body><br><br><br>
+
+</html>

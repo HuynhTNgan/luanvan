@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+  data-template="vertical-menu-template-free">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Tra Cứu </title>
+  <link rel="stylesheet" href="../assets/css/tracuu.css">
+  <link href="../assets/img/logo.PNG" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<header style="position: fixed; top: 20px; left: 10px; padding: 10px; font-size: 20px;">
+  <a href="index.html" style="text-decoration: none; color: #06223a;" class="fa fa-solid fa-graduation-cap"><b><i>CHỨNG
+        THỰC</i></b></a>
+</header>
+<br><br><br><br>
+
+<body>
+
+
+
+  <form id="formAuthentication" action="/tracuu" method="POST">
+
+    <div class="main_div">
+
+      <div class="title">Nhập thông tin bạn muốn tra</div> <br>
+
+      <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Mã số sinh viên</p>
+      <div class="input_box">
+        <input type="text" id="mssv" placeholder="Nhập MSSV" name="mssv" required
+          style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+      </div><br>
+
+      <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Trường</p>
+      <div class="input_box">
+        <input type="text" id="truong" placeholder="Nhập tên trường" name="truong" required
+          style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+      </div><br>
+
+      <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Mật khẩu</p>
+      <div class="input_box">
+        <input type="password" id="pw" placeholder="Nhập mật khẩu của sinh viên" name="pw" required
+          style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+
+      </div>
+
+      
+
+      <div class="clearfix">
+        <button onclick="tracuu()" type="submit" class="signupbtn">Tra cứu</button>
+      </div> <br>
+
+
+      <a href="index.html">Quay về Trang chủ</a>
+
+    </div>
+
+  </form>
+
+
+
+
+  <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+  <script src="../assets/vendor/libs/popper/popper.js"></script>
+  <script src="../assets/vendor/js/bootstrap.js"></script>
+  <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+  <script src="../assets/vendor/js/menu.js"></script>
+
+  <script src="../assets/js/main.js"></script>
+
+  <script>
+    const pwInput = document.getElementById('pw');
+    const toggleIcon = document.getElementById('togglePassword');
+  
+    toggleIcon.addEventListener('click', function () {
+        // Toggle between password and text display
+        if (pwInput.type === "password") {
+            pwInput.type = "text";
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
+        } else {
+            pwInput.type = "password";
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        }
+    });
+  </script>
+
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+</body><br><br><br>
+
+</html>

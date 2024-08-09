@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #b12f31;
+    height: calc(100vh);
+}
+
+.container{
+    display: flex;
+}
+
+nav{
+    position: relative;
+    top:0;
+    bottom: 0;
+    left: 0;
+    background: #333;
+    overflow: hidden;
+    box-shadow: 0 0px 35px rgba(0, 0, 0, 0.1);
+    height: calc(100vh);
+}
+
+.logo {
+    color: #fff;
+    text-align: center;
+    display: flex;
+    margin: 10px 0 0 10px;
+}
+
+.logo span {
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+a {
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    display: table;
+    width: 280px;
+    padding: 10px;
+}
+
+nav .fas{
+    position: relative;
+    width: 70px;
+    height: 50px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: -20px;
+}
+
+a:hover{
+    background: #06223a;
+}
+
+.logo a:hover {
+    background: #333; 
+  }
+
+
+
+.main-top i{
+    border-radius: 5rem;
+    background: #333;
+    color: #fff;
+    padding: .9rem 3rem;
+   
+    position: absolute;
+    right: 0;
+    margin: 10px 30px;
+    
+    cursor: pointer;
+}
+
+.main-top i:hover{
+    background: #06223a;
+}
+
+@media screen and (max-width: 1050px){
+    .container li {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 940px){
+    .container li span{
+        display: none;
+    }
+    .container {
+        align-items: center;
+    }
+
+    .container li i{
+        width: 40px;
+        height: 40px;
+    }
+}
+.main-logout button{
+    border-radius: 5rem;
+    background: #333;
+    color: #fff;
+    padding: .9rem 3rem;
+   
+    position: absolute;
+    right: 0;
+    margin: 10px 30px;
+    
+    cursor: pointer;
+}
+
+.main-logout buttons:hover{
+    background: #06223a;
+}
+
+/* add  */
+.wrapper {
+    display: flex; /* Enable flexbox layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Set minimum height for full viewport */
+  }
+.main_div{
+    width: 100%;
+    height: 95vh;
+    max-width: 650px;
+    max-height: 610px;
+    background-color: white;
+    padding: 28px;
+    margin: 70px 120px;
+    border-radius: 10px;
+    box-shadow: inset -2px 2px 2px black;
+}
+
+
+.main_div .title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.main_div .social_icons{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.addbtn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+    
+    outline: none;
+    font-size: 17px;
+    padding-left: 25px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    transition: all 0.3s ease;
+    border-color:grey;
+    background: #333;
+    color: white;
+
+}
+
+.addbtn:hover{
+    background-color: #06223a ;
+}
+
+
+
+form {
+    margin-top: 20px;
+    
+}
+
+
+form .input_box{
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+}
+
+.input_box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    padding-left: 25px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+form .option_div {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.option_div .check_box {
+    display: flex;
+    align-items: center;
+}
+
+.option_div span{
+    margin-left: 5px;
+    font-size: 12px;
+    color: #333
+}
+
+
+
+
+
+form .sign_up {
+    text-align: center;
+    margin-top: 25px;
+}
+
+
+
+form a{
+    text-decoration: none;
+}
+
+form a :hover{
+    text-decoration: underline;
+} 
+
+@media (max-width: 750px){
+    .main_div{
+      min-width: 280px;
+    }
+    
+    .input_box{
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .input_box:nth-child(2n){
+        justify-content: space-between;
+    }
+
+    .title{
+        max-height: 380px;
+        overflow: auto;
+    }
+
+    .title::-webkit-scrollbar{
+        width: 0;
+    }
+}

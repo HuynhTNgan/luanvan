@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi" data-assets-path="../assets/">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bằng thật</title>
+  <link rel="stylesheet" href="../assets/css/kqxacthuc.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<header style="position: fixed; top: 20px; left: 10px; padding: 10px; font-size: 20px;">
+  <a href="index.html" style="text-decoration: none; color: #06223a;" class="fa fa-solid fa-graduation-cap"><b><i>CHỨNG
+        THỰC</i></b></a>
+</header>
+
+<body>
+  <br><br><br><br>
+  <h1>Kết quả</h1><br>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <table>
+      <thead id="bangdanhsach">
+        <tr>
+          <th>MSSV</th>
+          <th>Tên</th>
+          <th>Ngành học</th>
+          <th>Hình thức đào tạo</th>
+          <th>Năm Tốt nghiệp</th>
+          <th>Xếp loại tốt nghiệp</th>
+
+        </tr>
+      </thead>
+      <tbody id="dulieu">
+        <tr>
+          <th>
+            <%= data.mssv %>
+          </th>
+          <th>
+            <%= data.fullname %>
+          </th>
+          <th>
+            <%= data.nganh %>
+          </th>
+          <th>
+            <%= data.hinhthuc %>
+          </th>
+          <th>
+            <%= data.nam %>
+          </th>
+          <th>
+            <%= data.loai %>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div class="clearfix">
+      <form action="/ketqua" method="post">
+        <input type="hidden" name="mssv" value="<%= data.mssv %>">
+        <input type="hidden" name="sohieu" value="<%= data.sohieu %>">
+        <button type="submit" style="display: flex; justify-content: center; align-items: center;">Xem chi tiết</button>
+
+      </form>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <a href="index.html">Quay về Trang chủ</a><br>
+  <section class="footer">
+    <div class="credit">Được tạo bởi <span>Duong Truc Mai B2004790 & Huynh Thanh Ngan B2004735</span> | all right
+      reserved</div>
+  </section>
+</body>
+
+</html>

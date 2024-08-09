@@ -1,0 +1,178 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 98vh;
+}
+
+.bia-bang {
+    width: 50%;
+    background-color: #9b0c0c;
+    color: #fff;
+    text-align: center;
+}
+
+.bia-bang img {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+}
+
+.bia-bang h1 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #fff069;
+}
+
+.bia-bang h2 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #fff069;
+    
+}
+.bia-bang h3 {
+    font-size: 17px;
+    margin: 5px 0;
+    color: #fff069;
+    text-decoration: underline;
+}
+
+.thong-tin-bang {
+    width: 50%;
+    
+    color: #000;
+    padding: 20px;
+}
+
+.thong-tin-bang p {
+    margin: 5px 0;
+}
+
+/* Header */
+.header {
+    text-align: center;
+}
+
+.header img {
+    width: 100px;
+    height: 100px;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.header h3 {
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+/* Nội dung */
+.noi-dung {
+    
+    margin-top: 20px;
+}
+
+.noi-dung h2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: normal;
+}
+.noi-dung h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.noi-dung h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #cf1d1d;
+}
+
+.noi-dung p {
+    margin-bottom: 10px;
+}
+
+
+  
+
+/* Footer */
+.footer {
+
+        display: flex; /* Enable flexbox for the footer container */
+        flex-direction: column; /* Arrange items vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 20px;
+      
+    margin-top: 20px;
+}
+
+
+
+.footer .box-container .box a{
+    display: block;
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+  }
+  
+  .footer .box-container .box a:hover{
+    color:#fff;
+    text-decoration: underline;
+  }
+  
+  .footer .credit{
+    background-color: #4682B4;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 1rem;
+    color: #333;
+    border-top: .1rem solid rgba(0,0,0,1);
+  }
+  
+  .footer .credit span{
+    color: #fff;
+  
+  }
+
+
+  
+
+  
+.footer-content {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Items centered horizontally within the content */
+  /* Right-align the content within the footer */
+  margin-left: auto;  /* Push content to the left edge */
+}
+
+
+  
+.sohieu {
+
+        position: fixed;
+        bottom: 30px;
+        left: 0;
+        width: 110%;
+      
+        /* Centering techniques */
+        display: flex; /* Enable flexbox for horizontal alignment */
+        justify-content: center; /* Center content horizontally within the element */
+        align-items: center; /* Vertically align content in the middle (optional) */
+      
+    
+      
+      
+  }
+  

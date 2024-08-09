@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-assets-path="../assets/">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Trường Đại học 
+  </title>
+  <link rel="stylesheet" href="../assets/css/xoa.css">
+  <link href="../assets/img/logo.PNG" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <meta name="viewport" content="" width=device-width, initial-scale="1.0">
+
+</head>
+
+<body style="height: 100vh; margin: 0;">
+  <div class="container">
+    <nav>
+      <ul>
+        <div style="color:#ffffff; font-size:20px; height:100px">
+          <li>
+            <i class="fas fa-home"></i>
+            <span class="nav-item">TRƯỜNG ĐẠI HỌC 
+            </span>
+          </li>
+        </div>
+
+        <li><a href="/login">
+            <i class="fas fa-solid fa-user"></i>
+            <span class="nav-item">Thêm thông tin </span>
+          </a></li>
+
+
+
+
+        <li style="background-color: #06223a;"><a href="/xoa">
+            <i class="fas fa-trash"></i>
+            <span class="nav-item">Xóa thông tin</span>
+          </a></li>
+
+
+      </ul>
+    </nav>
+    <div class="main-top">
+      <form action="/logout" class="main-logout">
+        <button class="fas fa-sign-out-alt">Đăng xuất</button>
+      </form>
+      <form id="deleteForm">
+        <div class="wrapper">
+          <div class="main_div">
+            <div class="title">Nhập thông tin để xóa tài khoản </div> <br>
+
+            <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Mssv</p>
+            <div class="input_box">
+              <input type="text" id="mssv" placeholder="Nhập tên mssv muốn xóa" name="mssv" required
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+            </div><br>
+
+            <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Trường</p>
+            <div class="input_box">
+              <input type="text" id="truong" placeholder="Nhập tên trường" name="truong" required
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+            </div><br>
+
+            <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Số hiệu văn bằng</p>
+            <div class="input_box">
+              <input type="text" id="sohieu" placeholder="Nhập số hiệu văn bằng" name="sohieu" required
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+            </div><br>
+
+            <p style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">Password</p>
+            <div class="input_box">
+              <input type="password" id="password" placeholder="Nhập password username" name="password" required
+                style="font-family: 'Verdana, Geneva, Tahoma, sans-serif'">
+              <i id="togglePassword" style="font-size:2ch; margin-top: 1px; " class="fas fa-eye-slash"></i>
+            </div><br>
+
+            <div class="clearfix">
+              <button type="submit" class="addbtn">Xóa tài khoản</button>
+            </div> <br>
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+    const deleteForm = document.getElementById('deleteForm');
+
+    deleteForm.addEventListener('submit', async (event) => {
+      event.preventDefault(); // Prevent default form submission
+
+      const mssv = document.getElementById('mssv').value;
+      const truong = document.getElementById('truong').value;
+      const sohieu = document.getElementById('sohieu').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const response = await fetch('/xoa', {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' }, // Specify JSON content type
+          body: JSON.stringify({ mssv, truong, password, sohieu }) // Send user and pw data in JSON format
+        });
+
+        const data = await response.json(); // Parse JSON response
+
+        console.log(data.message); // Log the response message
+
+        if (data.message === 'Xóa thành công!') {
+          // Display a success message to the user here
+          alert(data.message); // Example alert for success
+          // Optionally clear the form
+          document.getElementById('mssv').value = '';
+          document.getElementById('truong').value = '';
+          document.getElementById('sohieu').value = '';
+          document.getElementById('password').value = '';
+        } else {
+          // Display an error message to the user here
+          alert(data.message); // Example alert for error (Not found)
+        }
+      } catch (err) {
+        console.error('Error sending deletion request:', err);
+        // Display a generic error message to the user
+        alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+      }
+    });
+  </script>
+  <script>
+    const pwInput = document.getElementById('password');
+    const toggleIcon = document.getElementById('togglePassword');
+
+    toggleIcon.addEventListener('click', function () {
+      // Toggle between password and text display
+      if (pwInput.type === "password") {
+        pwInput.type = "text";
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+      } else {
+        pwInput.type = "password";
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+      }
+    });
+  </script>
+  
+<script>
+  const soHieuInput = document.getElementById('sohieu');
+
+  soHieuInput.addEventListener('input', function () {
+    this.value = this.value.toUpperCase();
+  });
+</script>
+  <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+  <script src="../assets/vendor/libs/popper/popper.js"></script>
+  <script src="../assets/vendor/js/bootstrap.js"></script>
+  <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+  <script src="../assets/vendor/js/menu.js"></script>
+  <!-- endbuild -->
+
+  <!-- Vendors JS -->
+
+  <!-- Main JS -->
+  <script src="../assets/js/main.js"></script>
+
+  <!-- Page JS -->
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body><br><br><br>
+
+</html>
